@@ -1,0 +1,23 @@
+name: Security
+
+on:
+  workflow_call:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install security tools
+        run: bun add osv-scanner semgrep
+
+      - name: Scan dependencies
+        run: osv-scanner --lockfile=./bun.lock
+
+      - name: Check code security
+        run: semgrep scan --config=auto
