@@ -9,7 +9,7 @@ You'll learn how to:
 - Set up git hooks with [Husky](https://github.com/typicode/husky) to force commit lint's format
 - Add [Biome](https://biomejs.dev/) as a formatter and linter for js/ts
 - Set up a [lint-staged](https://github.com/lint-staged/lint-staged) and a pre-commit hook to automatically lint and format code before committing
-- Make a basic [bun server](https://bun.sh/docs/api/http) with some tests using bun's testing API
+- Add a [bun server](https://bun.sh/docs/api/http) and tests using bun's testing API
 - Add a pre-push hook that automatically runs tests and fails if a test isn't passing
 - How to dockerize the bun server
 - Add a [Bruno](https://www.usebruno.com/) API collection to test a running server
@@ -36,3 +36,4 @@ Here's a list of all the lessons:
 - [Lesson 1 - Initialise a basic Bun project](lessons/1-initialise-bun-project.md)
 - [Lesson 2 - Add commitlint and git hooks](lessons/2-add-commit-lint-git-hooks.md)
 - [Lesson 3 - Add Biome and lint-staged](lessons/3-biome-lint-staged.md)
+- [Lesson 4 - Add a bun server and bun tests](lessons/4-bun-server-tests.md)

@@ -1,6 +1,6 @@
 {
 	"name": "learnalong",
-	"module": "index.ts",
+	"module": "src/server.ts",
 	"type": "module",
 	"private": true,
 	"devDependencies": {
@@ -15,11 +15,15 @@
 		"typescript": "^5"
 	},
 	"scripts": {
-		"prepare": "husky"
+		"prepare": "husky",
+		"dev": "bun run src/server.ts -w"
 	},
 	"lint-staged": {
 		"*.{js,ts,json}": [
 			"bunx biome check --write"
 		]
+	},
+	"dependencies": {
+		"zod": "^3.25.67"
 	}
 }
