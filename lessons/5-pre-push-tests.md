@@ -107,7 +107,51 @@ error: failed to push some refs to 'github.com:hadestructhor/learnalong.git'
 
 Now repair the test to it's previous state. commit the changes under something like `git commit -m "fix(tests): fixing broken tests to push code"`.
 
-Now you should see something like this:
+Now run `git push` again and you should see something like this:
 
 ```
+bun test v1.2.18 (0d4089ea)
+
+tests\schemas\greet.request.spec.ts:
+✓ GreetRequestSchema > Invalid body type > body = 1 [15.00ms]
+✓ GreetRequestSchema > Invalid body type > body = "2"
+✓ GreetRequestSchema > Invalid body type > body = null
+✓ GreetRequestSchema > Invalid body type > body = []
+✓ GreetRequestSchema > Invalid name type > name = 1
+✓ GreetRequestSchema > Invalid name type > name = {}
+✓ GreetRequestSchema > Invalid name type > name = null
+✓ GreetRequestSchema > Invalid name type > name = []
+✓ GreetRequestSchema > Invalid name type > Invalid empty name
+
+tests\services\greet.spec.ts:
+✓ GreetService > should greet Agata
+✓ GreetService > should greet Angelo
+✓ GreetService > should greet Miso
+------------------------------|---------|---------|-------------------
+File                          | % Funcs | % Lines | Uncovered Line #s
+------------------------------|---------|---------|-------------------
+All files                     |  100.00 |  100.00 |
+ src\schemas\greet.request.ts |  100.00 |  100.00 |
+ src\services\greet.ts        |  100.00 |  100.00 |
+ tests\utils\types.ts         |  100.00 |  100.00 |
+------------------------------|---------|---------|-------------------
+
+ 12 pass
+ 0 fail
+ 36 expect() calls
+Ran 12 tests across 2 files. [334.00ms]
+Enumerating objects: 21, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (14/14), 2.28 KiB | 332.00 KiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), completed with 4 local objects.
+To github.com:hadestructhor/learnalong.git
+   207d6a1..5662262  main -> main
+
 ```
+
+That's it for today ! You have now forced people to push code without breaking any tests.
+This is obviously what I like to do on my personal projects to keep a high standard on my own code.
+You could run this hook to be run before merging instead, which might be better to allow people to push code without working tests if it's the end of the day and they want to keep the state of their work.
