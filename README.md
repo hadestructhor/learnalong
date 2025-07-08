@@ -37,3 +37,4 @@ Here's a list of all the lessons:
 - [Lesson 2 - Add commitlint and git hooks](lessons/2-add-commit-lint-git-hooks.md)
 - [Lesson 3 - Add Biome and lint-staged](lessons/3-biome-lint-staged.md)
 - [Lesson 4 - Add a bun server and bun tests](lessons/4-bun-server-tests.md)
+- [Lesson 5 - Pre push hook to run tests](./lessons/5-pre-push-tests.md)

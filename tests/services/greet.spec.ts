@@ -8,7 +8,7 @@ describe("GreetService", () => {
 	for (const name of names) {
 		it(`should greet ${name}`, () => {
 			const greet = greetService.greet(name);
-			expect(greet).toContain(name);
+			expect(greet).toBe(name);
 			expect(greet).toContain("Hello");
 			expect(greet).toBe(`Hello ${name}!`);
 		});
